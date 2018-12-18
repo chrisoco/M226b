@@ -1,0 +1,4 @@
+P1, P1, Herz, Kardiologie, 2018/12/18
+P2, P2, Herz, Kardiologie, 2018/12/18
+P4, P4, Kraft, Physiotherapie, 2018/12/18
+P3, P3, Herz, Kardiologie, 2018/12/18
