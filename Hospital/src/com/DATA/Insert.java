@@ -2,7 +2,6 @@ package com.DATA;
 
 import com.Hospital.Department;
 import com.Hospital.Hospital;
-import com.Person.Doctor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,9 +17,9 @@ public class Insert {
 	private static String line;
 	private static String [] lineArr;
 
-	public static Hospital generate(String name) throws FileNotFoundException {
+	public static Hospital generate() throws FileNotFoundException {
 
-		h = new Hospital(name);
+		h = new Hospital();
 
 		insertBuildings();
 		insertDepartments();

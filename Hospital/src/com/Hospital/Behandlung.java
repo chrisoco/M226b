@@ -37,7 +37,7 @@ public class Behandlung implements Comparable<Behandlung>{
 
 		String docName = "";
 
-		if (doctor != null) this.doctor.getLastName();
+		if (doctor != null) docName = this.doctor.getLastName();
 
 		return String.format("\t\t-/> %-20s DR. %-20s %s %-14s %-20s %s", department.getName(), docName, department.getBuildingFloor(), formatDateOfCal(termin), patient.getLastName(), beschwerden);
 	}

@@ -6,6 +6,7 @@ import com.Hospital.Hospital;
 import com.Person.Patient;
 
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -23,7 +24,7 @@ public class Main {
 
 	private void top() throws FileNotFoundException {
 
-		ksa = Insert.generate("Kanton Spital Aarau");
+		ksa = Insert.generate();
 
 		Console.printWelcome();
 
@@ -50,7 +51,7 @@ public class Main {
 
 	private void menuPatient() {
 
-		Patient currPatient = ksa.getPat(Console.getSearchInfo("FirstName"), Console.getSearchInfo("LastName"));
+		Patient currPatient = ksa.getPat(Console.getSearchInfo("FirstName"), Console.getSearchInfo("LastName "));
 
 		if (currPatient != null) {
 
@@ -62,8 +63,9 @@ public class Main {
 
 				switch (Console.get()) {
 
-					case "1": /* NEW BEHANDLUNG */break;
+					case "1": newBehandlung(currPatient); break;
 					case "2": ksa.printPatientBehandlungen(currPatient); break;
+					case "3": Console.print(currPatient.getInfo()); break;
 					case "x": repeat = false; break;
 
 					default: Console.falseInput();
@@ -80,7 +82,30 @@ public class Main {
 
 	}
 
+	private void newBehandlung(Patient p) {
+
+		String beschwerden = Console.getSearchInfo("Beschwerden   ");
+
+		ksa.addBehandlung(p, ksa.getZuweisung(beschwerden), beschwerden, LocalDate.now());
+
+	}
+
 	private void registerPatient() {
+
+		String firstName = Console.getSearchInfo("FirstName   ");
+		String lastName  = Console.getSearchInfo("LastName    ");
+
+		if (ksa.getPat(firstName, lastName) != null) {
+			Console.println("\t\t :/-/> " + firstName + ", " + lastName + " is Already Registered .../>\n");
+			return;
+		}
+
+		String    address      = Console.getSearchInfo("Address         ");
+		LocalDate bornDate     = Console.getDate      ("Born(DD/MM/YYYY)");
+		String    krankenKasse = Console.getSearchInfo("Krankenkasse    ");
+
+
+		ksa.addPatient(firstName, lastName, address, bornDate, krankenKasse);
 
 	}
 
@@ -91,10 +116,10 @@ public class Main {
 
 		Collections.sort(temp);
 
-		Console.print("\n\t\t-/>Ordered By Department:\n");
+		Console.println("\n\t\t-/>Ordered By Department:\n");
 
 		for (Behandlung b : temp) {
-			Console.print(b.getInfo());
+			Console.println(b.getInfo());
 		}
 
 	}

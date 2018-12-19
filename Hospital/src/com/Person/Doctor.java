@@ -11,6 +11,11 @@ public class Doctor extends Employee {
 		this.fachGebiet = fachGebiet;
 	}
 
+	public Doctor() {
+		super("Ambulant", "Ambluant", "HauptGB", null);
+		this.fachGebiet = "Notfall";
+	}
+
 	public void printD() {
 		System.out.println(this.getFirstName() + " " + this.getLastName());
 	}

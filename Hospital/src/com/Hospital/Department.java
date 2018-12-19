@@ -24,6 +24,13 @@ public class Department {
 
 	}
 
+	public Department(){
+
+		this("Notfallstation", "ALLES", new Building("HauptGB", ""), "EG", 20);
+		this.doctor = new Doctor();
+
+	}
+
 	public String getName() {
 		return name;
 	}

@@ -21,5 +21,8 @@ public abstract class Person {
 		return lastName;
 	}
 
+	public String getAddress() {
+		return address;
+	}
 
 }
