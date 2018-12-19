@@ -2,15 +2,12 @@ package com.Hospital;
 
 import com.Person.Doctor;
 
-
 public class Department {
 
 	private String name;
 	private String fachGebiet;
 
 	private Doctor doctor;
-
-	//private List<Employee>   employeeList   = new ArrayList<>();
 
 	private Building building;
 	private Floor floor;
@@ -34,7 +31,6 @@ public class Department {
 	public String getName() {
 		return name;
 	}
-
 
 	public Doctor getDoc() {
 

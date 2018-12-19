@@ -6,13 +6,13 @@ import com.Person.Patient;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Behandlung implements Comparable<Behandlung>{
+public class Behandlung implements Comparable<Behandlung> {
 
 	private Patient patient;
 	private String  beschwerden;
 
 	private Department department;
-	private Doctor     doctor;
+	private Doctor doctor;
 
 	private LocalDate termin;
 

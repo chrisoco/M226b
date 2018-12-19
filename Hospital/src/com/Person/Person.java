@@ -1,6 +1,8 @@
 package com.Person;
 
-public abstract class Person {
+import com.IPerson;
+
+public abstract class Person implements IPerson {
 
 	private String firstName;
 	private String lastName;

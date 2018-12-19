@@ -2,6 +2,7 @@ package com.DATA;
 
 import com.Hospital.Department;
 import com.Hospital.Hospital;
+import com.InsertData;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,29 +11,35 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Insert {
+public class Insert implements InsertData {
 
-	private static Hospital h;
-	private static Scanner sc;
-	private static String line;
+	private static Hospital  h;
+	private static Scanner   sc;
+	private static String    line;
 	private static String [] lineArr;
 
-	public static Hospital generate() throws FileNotFoundException {
 
+	public Insert() {
 		h = new Hospital();
+	}
 
-		insertBuildings();
-		insertDepartments();
-		insertEmployee();
-		insertPatient();
-		insertBehandlung();
-		h.setDepZuweisung(genHashMap());
+	public Hospital generate() {
 
+		try {
+
+			insertBuildings();
+			insertDepartments();
+			insertEmployee();
+			insertPatient();
+			insertBehandlung();
+			h.setDepZuweisung(insertHashMapData());
+
+		} catch (Exception e){}
 
 		return h;
 	}
 
-	private static void insertBuildings() throws FileNotFoundException {
+	public void insertBuildings() throws FileNotFoundException {
 
 		sc = new Scanner(new File("src/com/DATA/Buildings.txt"));
 
@@ -44,10 +51,9 @@ public class Insert {
 			h.addBuilding(lineArr[0], lineArr[1]);
 		}
 
-
 	}
 
-	private static void insertDepartments() throws FileNotFoundException {
+	public void insertDepartments() throws FileNotFoundException {
 
 		sc = new Scanner(new File("src/com/DATA/Departments.txt"));
 
@@ -67,7 +73,7 @@ public class Insert {
 		return LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 	}
 
-	private static void insertEmployee() throws FileNotFoundException {
+	public void insertEmployee() throws FileNotFoundException {
 
 		sc = new Scanner(new File("src/com/DATA/Employee.txt"));
 
@@ -77,13 +83,12 @@ public class Insert {
 			lineArr = line.split(", ");
 
 			h.addDoc(lineArr[0], lineArr[1], lineArr[2], lineArr[3], getDateOfString(lineArr[4]), lineArr[5]);
-//			else h.addNurse(lineArr[0], lineArr[1], lineArr[2], lineArr[3], getDateOfString(lineArr[4]));
 
 		}
 
 	}
 
-	private static void insertPatient() throws FileNotFoundException {
+	public void insertPatient() throws FileNotFoundException {
 
 		sc = new Scanner(new File("src/com/DATA/Patients.txt"));
 
@@ -95,9 +100,10 @@ public class Insert {
 			h.addPatient(lineArr[0], lineArr[1], lineArr[2], getDateOfString(lineArr[3]), lineArr[4]);
 
 		}
+
 	}
 
-	private static void insertBehandlung() throws FileNotFoundException {
+	public void insertBehandlung() throws FileNotFoundException {
 
 		sc = new Scanner(new File("src/com/DATA/Behandlungen.txt"));
 
@@ -112,7 +118,7 @@ public class Insert {
 
 	}
 
-	public static HashMap<String, Department> genHashMap() throws FileNotFoundException {
+	public HashMap<String, Department> insertHashMapData() throws FileNotFoundException {
 
 		HashMap<String, Department> hashMap = new HashMap<>();
 

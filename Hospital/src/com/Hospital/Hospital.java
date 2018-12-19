@@ -1,15 +1,16 @@
 package com.Hospital;
 
 import com.Console;
-import com.Person.Doctor;
+import com.IHospital;
 import com.Person.Patient;
+import com.Person.Doctor;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Hospital {
+public class Hospital implements IHospital {
 
 	private HashMap<String, Department> depZuweisung;
 
@@ -17,6 +18,7 @@ public class Hospital {
 	private List<Patient>    patientList    = new ArrayList<>();
 	private List<Behandlung> behandlungList = new ArrayList<>();
 	private List<Building>   buildingList   = new ArrayList<>();
+
 	private Department defaultDep;
 
 

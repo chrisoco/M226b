@@ -13,6 +13,7 @@ public class Patient extends Person {
 		this.krankenKasse = krankenKasse;
 	}
 
+	@Override
 	public String getInfo() {
 		return  "\n\n\tINFOS :-/>" +
 				"\n\t\t/>) FN >  " + getFirstName() +

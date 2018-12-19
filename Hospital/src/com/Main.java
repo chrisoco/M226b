@@ -5,7 +5,6 @@ import com.Hospital.Behandlung;
 import com.Hospital.Hospital;
 import com.Person.Patient;
 
-import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,18 +14,17 @@ public class Main {
 	Hospital ksa;
 
 	public static void main(String[] args) {
-		try {
 			new Main().top();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
-	private void top() throws FileNotFoundException {
+	private void top() {
 
-		ksa = Insert.generate();
+		ksa = new Insert().generate();
 
 		Console.printWelcome();
+
+
+
 
 		while(true){
 
@@ -109,7 +107,6 @@ public class Main {
 
 	}
 
-
 	private void departmentBehandlungen() {
 
 		ArrayList<Behandlung> temp = new ArrayList<>(ksa.getBehandlungList());
@@ -123,7 +120,6 @@ public class Main {
 		}
 
 	}
-
 
 
 }

@@ -20,4 +20,9 @@ public class Doctor extends Employee {
 		System.out.println(this.getFirstName() + " " + this.getLastName());
 	}
 
+	@Override
+	public String getInfo() {
+		return super.getInfo();
+	}
+
 }

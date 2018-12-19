@@ -11,5 +11,12 @@ public abstract class Employee extends Person {
 		this.angestelltSeit = angestelltSeit;
 	}
 
+	@Override
+	public String getInfo() {
+		return "\n\n\tINFOS :-/>" +
+				"\n\t\t/>) FN >  " + getFirstName() +
+				"\n\t\t/>) LN >  " + getLastName() +
+				"\n\t\t/>) AD >  " + getAddress() + "\n\n";
+	}
 
 }
