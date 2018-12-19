@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Console {
 
-	static Scanner sc = new Scanner(System.in);
+	private static Scanner sc = new Scanner(System.in);
 
 	public static void println(String s) {
 		System.out.println(s);

@@ -11,7 +11,7 @@ import java.util.Collections;
 
 public class Main {
 
-	Hospital ksa;
+	private Hospital ksa;
 
 	public static void main(String[] args) {
 			new Main().top();

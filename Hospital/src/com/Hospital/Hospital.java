@@ -35,7 +35,7 @@ public class Hospital implements IHospital {
 		Console.println("\t\t:/-/> Added Building: " + name + ", " + address);
 	}
 
-	public Building getBuilding(String name) {
+	private Building getBuilding(String name) {
 
 		for (Building b : buildingList)
 			if (b.getName().equalsIgnoreCase(name)) return b;
