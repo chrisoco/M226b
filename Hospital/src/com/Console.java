@@ -1,3 +1,9 @@
+/**
+ * @author Christopher O'Connor
+ * @date 21/12/2018
+ * @version 0.3.1
+ */
+
 package com;
 
 import java.time.LocalDate;
@@ -8,10 +14,18 @@ public class Console {
 
 	private static Scanner sc = new Scanner(System.in);
 
+	/**
+	 *
+	 * @param s Print String
+	 */
 	public static void println(String s) {
 		System.out.println(s);
 	}
 
+	/**
+	 *
+	 * @param s Print String in same Line
+	 */
 	public static void print(String s) {
 		System.out.print(s);
 	}
@@ -30,12 +44,19 @@ public class Console {
 				  "\n\tx)> Exit\n");
 	}
 
+	/**
+	 * Get UserInput from Console
+	 * @return UserInput
+	 */
 	public static String get() {
 		System.out.print("\n\t :/-/>  ");
 
 		return sc.nextLine().trim();
 	}
 
+	/**
+	 * Print: False Input Entered
+	 */
 	public static void falseInput() {
 
 		println( "\n\t)> False Input Entered...\n");
@@ -67,6 +88,11 @@ public class Console {
 
 	}
 
+	/**
+	 *
+	 * @param info String of a Date value
+	 * @return Converted Date Value from String
+	 */
 	public static LocalDate getDate(String info) {
 
 		return LocalDate.parse(getSearchInfo(info), DateTimeFormatter.ofPattern("dd/MM/yyyy"));

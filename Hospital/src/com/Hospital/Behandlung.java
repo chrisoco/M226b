@@ -1,3 +1,9 @@
+/**
+ * @author Christopher O'Connor
+ * @date 21/12/2018
+ * @version 0.3.1
+ */
+
 package com.Hospital;
 
 import com.Person.Doctor;
@@ -28,11 +34,20 @@ public class Behandlung implements Comparable<Behandlung> {
 
 	}
 
+	/**
+	 *
+	 * @param o Compare to Object
+	 * @return int String.compareTo -> 1, -1 or 0
+	 */
 	@Override
 	public int compareTo(Behandlung o) {
 		return this.department.getName().compareTo(o.getDepartment().getName());
 	}
 
+	/**
+	 *
+	 * @return String Get All Info of Behandlung
+	 */
 	public String getInfo() {
 
 		String docName = "";
@@ -42,7 +57,11 @@ public class Behandlung implements Comparable<Behandlung> {
 		return String.format("\t\t-/> %-20s DR. %-20s %s %-14s %-20s %s", department.getName(), docName, department.getBuildingFloor(), formatDateOfCal(termin), patient.getLastName(), beschwerden);
 	}
 
-
+	/**
+	 *
+	 * @param date LocalDate
+	 * @return String from LocalDate yyyy/MM/dd
+	 */
 	private String formatDateOfCal(LocalDate date) {
 
 		return date.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));

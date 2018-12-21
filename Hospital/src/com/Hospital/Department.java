@@ -1,3 +1,9 @@
+/**
+ * @author Christopher O'Connor
+ * @date 21/12/2018
+ * @version 0.3.1
+ */
+
 package com.Hospital;
 
 import com.Person.Doctor;
@@ -21,6 +27,9 @@ public class Department {
 
 	}
 
+	/**
+	 * Overloading Constructor.
+	 */
 	public Department(){
 
 		this("Notfallstation", "ALLES", new Building("HauptGB", ""), "EG", 20);

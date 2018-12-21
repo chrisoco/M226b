@@ -1,3 +1,9 @@
+/**
+ * @author Christopher O'Connor
+ * @date 21/12/2018
+ * @version 0.3.1
+ */
+
 package com;
 
 import com.DATA.Insert;
@@ -23,9 +29,6 @@ public class Main {
 
 		Console.printWelcome();
 
-
-
-
 		while(true){
 
 			Console.printMainMenu();
@@ -39,14 +42,16 @@ public class Main {
 
 				default: Console.falseInput();
 
-
 			}
 
 		}
 
 	}
 
-
+	/**
+	 * Menu of selected Patient.
+	 *
+	 */
 	private void menuPatient() {
 
 		Patient currPatient = ksa.getPat(Console.getSearchInfo("FirstName"), Console.getSearchInfo("LastName "));
@@ -80,6 +85,10 @@ public class Main {
 
 	}
 
+	/**
+	 * Add a new Behandlung to Patient
+	 * @param p selected Patient
+	 */
 	private void newBehandlung(Patient p) {
 
 		String beschwerden = Console.getSearchInfo("Beschwerden   ");
@@ -88,6 +97,9 @@ public class Main {
 
 	}
 
+	/**
+	 * Register a new Patient
+	 */
 	private void registerPatient() {
 
 		String firstName = Console.getSearchInfo("FirstName   ");
@@ -107,6 +119,9 @@ public class Main {
 
 	}
 
+	/**
+	 * Print all Behandlungen grouped by Department.
+	 */
 	private void departmentBehandlungen() {
 
 		ArrayList<Behandlung> temp = new ArrayList<>(ksa.getBehandlungList());
