@@ -8,6 +8,7 @@ package com;
 
 import com.Hospital.Department;
 import com.Hospital.Hospital;
+
 import java.util.HashMap;
 
 public interface InsertData {

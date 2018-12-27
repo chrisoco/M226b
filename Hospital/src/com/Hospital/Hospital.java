@@ -8,8 +8,8 @@ package com.Hospital;
 
 import com.Console;
 import com.IHospital;
-import com.Person.Patient;
 import com.Person.Doctor;
+import com.Person.Patient;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ public class Hospital implements IHospital {
 	 * @param name String Name to Compare all Objects.names too
 	 * @return Building with Matching name.
 	 */
-	private Building getBuilding(String name) {
+	public Building getBuilding(String name) {
 
 		for (Building b : buildingList)
 			if (b.getName().equalsIgnoreCase(name)) return b;
@@ -196,6 +196,10 @@ public class Hospital implements IHospital {
 		}
 
 		return defaultDep;
+	}
+
+	public List<Building> getBuildingList() {
+		return buildingList;
 	}
 
 }
