@@ -7,6 +7,8 @@
 package com.Person;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 
 public class Patient extends Person {
 
@@ -31,6 +33,21 @@ public class Patient extends Person {
 				"\n\t\t/>) AD >  " + getAddress() +
 				"\n\t\t/>) BD >  " + this.born +
 				"\n\t\t/>) KK >  " + this.krankenKasse + "\n\n";
+	}
+
+
+	public String toFile() {
+		return super.getFirstName() + ", " +
+				super.getLastName() + ", " +
+				super.getAddress()  + ", " +
+				getStringOfDate()   + ", " +
+				this.krankenKasse   + "\r\n";
+	}
+
+	private String getStringOfDate() {
+
+		return this.born.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+
 	}
 
 }

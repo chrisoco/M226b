@@ -75,4 +75,9 @@ public class Behandlung implements Comparable<Behandlung> {
 		return department;
 	}
 
+	public String toFile() {
+
+		return patient.getFirstName() + ", " + patient.getLastName() + ", " + beschwerden + ", " + department.getName() + ", " + formatDateOfCal(termin) + "\r\n";
+	}
+
 }

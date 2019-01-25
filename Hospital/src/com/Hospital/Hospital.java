@@ -7,7 +7,6 @@
 package com.Hospital;
 
 import com.Console;
-import com.IHospital;
 import com.Person.Doctor;
 import com.Person.Patient;
 
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Hospital implements IHospital {
+public class Hospital {
 
 	private HashMap<String, Department> depZuweisung;
 
@@ -200,6 +199,10 @@ public class Hospital implements IHospital {
 
 	public List<Building> getBuildingList() {
 		return buildingList;
+	}
+
+	public List<Patient> getPatientList() {
+		return patientList;
 	}
 
 }

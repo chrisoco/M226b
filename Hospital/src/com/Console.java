@@ -41,6 +41,7 @@ public class Console {
 		println(  "\n\t1)> Look UP Patient" +
 				  "\n\t2)> Register\n" +
 				  "\n\t3)> List Behandlungen <DEP>\n" +
+				  "\n\t4)> SAVE\n" +
 				  "\n\tx)> Exit\n");
 	}
 

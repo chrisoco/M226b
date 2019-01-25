@@ -7,6 +7,7 @@
 package com;
 
 import com.DATA.Insert;
+import com.DATA.SaveTxt;
 import com.Hospital.Behandlung;
 import com.Hospital.Hospital;
 import com.Person.Patient;
@@ -38,6 +39,7 @@ public class Main {
 				case "1": menuPatient();     break;
 				case "2": registerPatient(); break;
 				case "3": departmentBehandlungen(); break;
+				case "4": new SaveTxt(ksa); break;
 				case "x": break;
 
 				default: Console.falseInput();
