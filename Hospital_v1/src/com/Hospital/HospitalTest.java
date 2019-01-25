@@ -1,6 +1,8 @@
 package com.Hospital;
 
+/*
 import com.DATA.Insert;
+
 import com.Person.Patient;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -71,3 +73,4 @@ class HospitalTest {
 	}
 
 }
+*/

@@ -1,4 +1,0 @@
-P1, P1, STR. 01, 1991/01/01, CSS
-P2, P2, STR. 02, 1992/01/01, CSS
-P3, P3, STR. 03, 1993/01/01, Helsana
-P4, P4, STR. 04, 1994/01/01, Helsana
