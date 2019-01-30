@@ -91,13 +91,39 @@ public class Console {
 
 	/**
 	 *
-	 * @param info String of a Date value
 	 * @return Converted Date Value from String
 	 */
-	public static LocalDate getDate(String info) {
+	public static LocalDate getDate() {
 
-		return LocalDate.parse(getSearchInfo(info), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		String inputDate = getSearchInfo("Born(DD/MM/YYYY)");
+
+
+		while(!isDate(inputDate)) {
+
+			inputDate = getSearchInfo("Born(DD/MM/YYYY)");
+
+		}
+
+		return LocalDate.parse(inputDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
 	}
+
+
+	private static boolean isDate(String inputDate) {
+
+		try {
+
+			LocalDate.parse(inputDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+			return true;
+
+		} catch (Exception e) {
+			println("\n\t\t" + inputDate + " -> Is Not a Date...");
+			return false;
+		}
+
+	}
+
+
+
 
 }

@@ -113,7 +113,7 @@ public class Main {
 		}
 
 		String    address      = Console.getSearchInfo("Address         ");
-		LocalDate bornDate     = Console.getDate      ("Born(DD/MM/YYYY)");
+		LocalDate bornDate     = Console.getDate      ();
 		String    krankenKasse = Console.getSearchInfo("Krankenkasse    ");
 
 

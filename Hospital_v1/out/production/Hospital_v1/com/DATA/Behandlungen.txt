@@ -1,8 +1,0 @@
-P1, P1, Herz, Kardiologie, 2018/12/18
-P2, P2, Herz, Kardiologie, 2018/12/18
-P4, P4, Kraft, Physiotherapie, 2018/12/18
-P3, P3, Herz, Kardiologie, 2018/12/18
-Chris, OC, Kopfweh, Notfallstation, 2019/01/18
-Chris, OC, Herz, Kardiologie, 2019/01/18
-Chris, OC, Kraft, Physiotherapie, 2019/01/18
-subTest, subTest, Herz, Kardiologie, 2019/01/25

@@ -1,2 +1,0 @@
-B1, Tellstrasse 21
-B2, Tellstrasse 22
