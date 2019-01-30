@@ -41,7 +41,17 @@ public class Behandlung implements Comparable<Behandlung> {
 	 */
 	@Override
 	public int compareTo(Behandlung o) {
-		return this.department.getName().compareTo(o.getDepartment().getName());
+
+		int compare = this.department.getName().compareTo(o.getDepartment().getName());
+
+		if (compare == 0) {
+
+			compare = o.termin.compareTo(this.termin);
+
+		}
+
+		return compare;
+
 	}
 
 	/**

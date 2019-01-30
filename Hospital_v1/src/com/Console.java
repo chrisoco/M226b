@@ -124,6 +124,10 @@ public class Console {
 	}
 
 
+	public static boolean bye() {
+		print("\n\t\t\t\t:/-/> Thank you 4 leaving. CY@\n\n");
+		return true;
+	}
 
 
 }

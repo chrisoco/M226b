@@ -30,17 +30,20 @@ public class Main {
 
 		Console.printWelcome();
 
-		while(true){
+		boolean exit = false;
+
+		while(!exit){
 
 			Console.printMainMenu();
 
 			switch(Console.get()) {
 
-				case "1": menuPatient();     break;
-				case "2": registerPatient(); break;
+				case "1": menuPatient();            break;
+				case "2": registerPatient();        break;
 				case "3": departmentBehandlungen(); break;
-				case "4": new SaveTxt(ksa); break;
-				case "x": break;
+				case "4": new SaveTxt(ksa);         break;
+				case "X":
+				case "x": exit = Console.bye();     break;
 
 				default: Console.falseInput();
 
